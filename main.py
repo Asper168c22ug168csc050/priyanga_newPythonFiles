@@ -1,9 +1,24 @@
-year = int(input("Enter year:"))
-if year %4==0 and year%100 != 0:
-  print(year,"is a leep year")
-elif year %100 == 0:
-  print(year,"is not a leep year")
-elif year %400==0:
- print(year,"is a leep year")
-else:
- print(year,"is not a leep year")
+# 1. Implement a recursive function to calculate the factorial of a given number
+"""
+1! = 1 × 1
+2! = 2 × 1! --->2 × 1
+3! = 3 × 2! --->3 × 2 × 1
+.
+.
+10! = 10 × 9!
+
+Formula - n × (n - 1)!
+"""
+
+
+def fact_rec(n):
+  if n == 0 or n == 1:
+    return 1
+  else:
+    return n * fact_rec(n - 1)
+
+
+number = int(input("Enter A Value : "))
+res = fact_rec(number)
+
+print("The Factorial Of {} is {}.".format(number, res))
